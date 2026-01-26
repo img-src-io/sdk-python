@@ -1,0 +1,14 @@
+# ImageListResponse
+
+
+## Fields
+
+| Field                                                    | Type                                                     | Required                                                 | Description                                              | Example                                                  |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `images`                                                 | List[[models.ImageListItem](../models/imagelistitem.md)] | :heavy_check_mark:                                       | N/A                                                      |                                                          |
+| `folders`                                                | List[[models.FolderItem](../models/folderitem.md)]       | :heavy_check_mark:                                       | N/A                                                      |                                                          |
+| `total`                                                  | *int*                                                    | :heavy_check_mark:                                       | Total count of images (in current path)                  | 150                                                      |
+| `limit`                                                  | *int*                                                    | :heavy_check_mark:                                       | Maximum items per page                                   | 50                                                       |
+| `offset`                                                 | *int*                                                    | :heavy_check_mark:                                       | Current offset                                           | 0                                                        |
+| `has_more`                                               | *bool*                                                   | :heavy_check_mark:                                       | Whether more items exist                                 | true                                                     |
+| `path_filter`                                            | *Optional[str]*                                          | :heavy_minus_sign:                                       | Current path filter (if any)                             | blog/2024                                                |

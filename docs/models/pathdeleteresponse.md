@@ -1,0 +1,12 @@
+# PathDeleteResponse
+
+
+## Fields
+
+| Field                                                                | Type                                                                 | Required                                                             | Description                                                          | Example                                                              |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| `success`                                                            | *bool*                                                               | :heavy_check_mark:                                                   | Operation success flag                                               | true                                                                 |
+| `message`                                                            | *str*                                                                | :heavy_check_mark:                                                   | Human-readable message                                               | Path removed                                                         |
+| `remaining_paths`                                                    | List[*str*]                                                          | :heavy_check_mark:                                                   | Remaining paths for the image                                        | [<br/>"blog/photo.webp"<br/>]                                        |
+| `image_deleted`                                                      | *bool*                                                               | :heavy_check_mark:                                                   | Whether the image itself was deleted (last path removed)             | false                                                                |
+| `deleted_at`                                                         | [date](https://docs.python.org/3/library/datetime.html#date-objects) | :heavy_check_mark:                                                   | Deletion timestamp                                                   | 2025-01-21T12:00:00Z                                                 |
