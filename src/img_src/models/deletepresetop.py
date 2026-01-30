@@ -12,11 +12,11 @@ from typing_extensions import Annotated, NotRequired, TypedDict
 
 
 class DeletePresetRequestTypedDict(TypedDict):
-    id: str
+    name: str
 
 
 class DeletePresetRequest(BaseModel):
-    id: Annotated[
+    name: Annotated[
         str, FieldMetadata(path=PathParamMetadata(style="simple", explode=False))
     ]
 

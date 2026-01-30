@@ -28,6 +28,8 @@ class UploadResponseTypedDict(TypedDict):
     available_formats: AvailableFormatsTypedDict
     uploaded_at: datetime
     r"""Upload timestamp (RFC3339 format)"""
+    visibility: str
+    r"""Image visibility (public or private)"""
     links: HateoasLinksTypedDict
     is_new: NotRequired[bool]
     r"""Whether this is a newly uploaded image (false if duplicate)"""
@@ -57,6 +59,9 @@ class UploadResponse(BaseModel):
 
     uploaded_at: datetime
     r"""Upload timestamp (RFC3339 format)"""
+
+    visibility: str
+    r"""Image visibility (public or private)"""
 
     links: Annotated[HateoasLinks, pydantic.Field(alias="_links")]
 

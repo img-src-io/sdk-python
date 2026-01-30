@@ -57,6 +57,8 @@ class UploadImageRequestBodyTypedDict(TypedDict):
     r"""Image file to upload"""
     target_path: NotRequired[str]
     r"""Target path for organizing the image"""
+    visibility: NotRequired[str]
+    r"""Image visibility (public or private)"""
 
 
 class UploadImageRequestBody(BaseModel):
@@ -68,9 +70,12 @@ class UploadImageRequestBody(BaseModel):
     target_path: Annotated[Optional[str], FieldMetadata(multipart=True)] = None
     r"""Target path for organizing the image"""
 
+    visibility: Annotated[Optional[str], FieldMetadata(multipart=True)] = None
+    r"""Image visibility (public or private)"""
+
     @model_serializer(mode="wrap")
     def serialize_model(self, handler):
-        optional_fields = set(["file", "target_path"])
+        optional_fields = set(["file", "target_path", "visibility"])
         serialized = handler(self)
         m = {}
 

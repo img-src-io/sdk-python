@@ -14,6 +14,8 @@ class MetadataResponseTypedDict(TypedDict):
     r"""Image ID"""
     metadata: ImageMetadataTypedDict
     urls: CdnUrlsTypedDict
+    visibility: str
+    r"""Image visibility (public or private)"""
     links: HateoasLinksTypedDict
 
 
@@ -24,5 +26,8 @@ class MetadataResponse(BaseModel):
     metadata: ImageMetadata
 
     urls: CdnUrls
+
+    visibility: str
+    r"""Image visibility (public or private)"""
 
     links: Annotated[HateoasLinks, pydantic.Field(alias="_links")]

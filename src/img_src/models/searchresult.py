@@ -21,6 +21,8 @@ class SearchResultTypedDict(TypedDict):
     r"""Upload timestamp"""
     url: str
     r"""API endpoint URL"""
+    visibility: str
+    r"""Image visibility (public or private)"""
     sanitized_filename: NotRequired[str]
     r"""Sanitized filename"""
     cdn_url: NotRequired[str]
@@ -45,6 +47,9 @@ class SearchResult(BaseModel):
 
     url: str
     r"""API endpoint URL"""
+
+    visibility: str
+    r"""Image visibility (public or private)"""
 
     sanitized_filename: Optional[str] = None
     r"""Sanitized filename"""
