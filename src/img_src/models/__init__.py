@@ -6,9 +6,11 @@ import builtins
 import sys
 
 if TYPE_CHECKING:
+    from .activesignedurl import ActiveSignedUrl, ActiveSignedUrlTypedDict
     from .availableformats import AvailableFormats, AvailableFormatsTypedDict
     from .cdnurls import CdnUrls, CdnUrlsTypedDict
     from .createpresetop import CreatePresetResponse, CreatePresetResponseTypedDict
+    from .credits import Credits, CreditsTypedDict
     from .createpresetrequest import CreatePresetRequest, CreatePresetRequestTypedDict
     from .createsignedurlop import (
         CreateSignedURLRequest1,
@@ -112,6 +114,19 @@ if TYPE_CHECKING:
         UpdateSettingsRequest,
         UpdateSettingsRequestTypedDict,
     )
+    from .updatevisibilityop import (
+        UpdateVisibilityRequest,
+        UpdateVisibilityRequestBody,
+        UpdateVisibilityRequestBodyTypedDict,
+        UpdateVisibilityRequestTypedDict,
+        UpdateVisibilityResponse1,
+        UpdateVisibilityResponse1TypedDict,
+    )
+    from .updatevisibilityresponse import (
+        UpdateVisibilityResponse,
+        UpdateVisibilityResponseTypedDict,
+        Visibility,
+    )
     from .uploadimageop import (
         File,
         FileTypedDict,
@@ -125,8 +140,12 @@ if TYPE_CHECKING:
     from .usersettings import UserSettings, UserSettingsTypedDict
 
 __all__ = [
+    "ActiveSignedUrl",
+    "ActiveSignedUrlTypedDict",
     "AvailableFormats",
     "AvailableFormatsTypedDict",
+    "Credits",
+    "CreditsTypedDict",
     "CdnUrls",
     "CdnUrlsTypedDict",
     "CreatePresetRequest",
@@ -234,6 +253,14 @@ __all__ = [
     "UpdateSettingsRequestTypedDict",
     "UpdateSettingsResponse",
     "UpdateSettingsResponseTypedDict",
+    "UpdateVisibilityRequest",
+    "UpdateVisibilityRequestBody",
+    "UpdateVisibilityRequestBodyTypedDict",
+    "UpdateVisibilityRequestTypedDict",
+    "UpdateVisibilityResponse",
+    "UpdateVisibilityResponse1",
+    "UpdateVisibilityResponse1TypedDict",
+    "UpdateVisibilityResponseTypedDict",
     "UploadImageRequestBody",
     "UploadImageRequestBodyTypedDict",
     "UploadImageResponse",
@@ -244,11 +271,16 @@ __all__ = [
     "UsageResponseTypedDict",
     "UserSettings",
     "UserSettingsTypedDict",
+    "Visibility",
 ]
 
 _dynamic_imports: dict[str, str] = {
+    "ActiveSignedUrl": ".activesignedurl",
+    "ActiveSignedUrlTypedDict": ".activesignedurl",
     "AvailableFormats": ".availableformats",
     "AvailableFormatsTypedDict": ".availableformats",
+    "Credits": ".credits",
+    "CreditsTypedDict": ".credits",
     "CdnUrls": ".cdnurls",
     "CdnUrlsTypedDict": ".cdnurls",
     "CreatePresetResponse": ".createpresetop",
@@ -353,6 +385,15 @@ _dynamic_imports: dict[str, str] = {
     "UpdateSettingsResponseTypedDict": ".updatesettingsop",
     "UpdateSettingsRequest": ".updatesettingsrequest",
     "UpdateSettingsRequestTypedDict": ".updatesettingsrequest",
+    "UpdateVisibilityRequest": ".updatevisibilityop",
+    "UpdateVisibilityRequestTypedDict": ".updatevisibilityop",
+    "UpdateVisibilityRequestBody": ".updatevisibilityop",
+    "UpdateVisibilityRequestBodyTypedDict": ".updatevisibilityop",
+    "UpdateVisibilityResponse1": ".updatevisibilityop",
+    "UpdateVisibilityResponse1TypedDict": ".updatevisibilityop",
+    "UpdateVisibilityResponse": ".updatevisibilityresponse",
+    "UpdateVisibilityResponseTypedDict": ".updatevisibilityresponse",
+    "Visibility": ".updatevisibilityresponse",
     "File": ".uploadimageop",
     "FileTypedDict": ".uploadimageop",
     "UploadImageRequestBody": ".uploadimageop",

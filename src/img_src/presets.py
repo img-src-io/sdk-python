@@ -816,7 +816,7 @@ class Presets(BaseSDK):
     def delete_preset(
         self,
         *,
-        id: str,
+        name: str,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -826,7 +826,7 @@ class Presets(BaseSDK):
 
         Deletes a preset. Requires Pro plan.
 
-        :param id:
+        :param name:
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -843,12 +843,12 @@ class Presets(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         request = models.DeletePresetRequest(
-            id=id,
+            name=name,
         )
 
         req = self._build_request(
             method="DELETE",
-            path="/api/v1/settings/presets/{id}",
+            path="/api/v1/settings/presets/{name}",
             base_url=base_url,
             url_variables=url_variables,
             request=request,
@@ -914,7 +914,7 @@ class Presets(BaseSDK):
     async def delete_preset_async(
         self,
         *,
-        id: str,
+        name: str,
         retries: OptionalNullable[utils.RetryConfig] = UNSET,
         server_url: Optional[str] = None,
         timeout_ms: Optional[int] = None,
@@ -924,7 +924,7 @@ class Presets(BaseSDK):
 
         Deletes a preset. Requires Pro plan.
 
-        :param id:
+        :param name:
         :param retries: Override the default retry configuration for this method
         :param server_url: Override the default server URL for this method
         :param timeout_ms: Override the default request timeout configuration for this method in milliseconds
@@ -941,12 +941,12 @@ class Presets(BaseSDK):
             base_url = self._get_url(base_url, url_variables)
 
         request = models.DeletePresetRequest(
-            id=id,
+            name=name,
         )
 
         req = self._build_request_async(
             method="DELETE",
-            path="/api/v1/settings/presets/{id}",
+            path="/api/v1/settings/presets/{name}",
             base_url=base_url,
             url_variables=url_variables,
             request=request,
