@@ -2,6 +2,7 @@
 
 Developer-friendly & type-safe Python SDK specifically catered to leverage *img-src* API.
 
+[![PyPI](https://img.shields.io/pypi/v/img-src?style=for-the-badge&labelColor=eff6ff&color=3b5bdb)](https://pypi.org/project/img-src/)
 [![License: MIT](https://img.shields.io/badge/LICENSE_//_MIT-3b5bdb?style=for-the-badge&labelColor=eff6ff)](https://opensource.org/licenses/MIT)
 
 <br /><br />
