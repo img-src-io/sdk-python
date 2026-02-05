@@ -1603,7 +1603,7 @@ class Images(BaseSDK):
                 security_source=self.sdk_configuration.security,
             ),
             request=req,
-            error_status_codes=["401", "403", "404", "4XX", "500", "5XX"],
+            error_status_codes=["400", "401", "403", "404", "4XX", "500", "5XX"],
             retry_config=retry_config,
         )
 
@@ -1615,7 +1615,7 @@ class Images(BaseSDK):
                 ),
                 http_meta=models.HTTPMetadata(request=req, response=http_res),
             )
-        if utils.match_response(http_res, ["401", "403", "404"], "application/json"):
+        if utils.match_response(http_res, ["400", "401", "403", "404"], "application/json"):
             response_data = unmarshal_json_response(errors.ErrorResponseData, http_res)
             raise errors.ErrorResponse(response_data, http_res)
         if utils.match_response(http_res, "500", "application/json"):
@@ -1704,7 +1704,7 @@ class Images(BaseSDK):
                 security_source=self.sdk_configuration.security,
             ),
             request=req,
-            error_status_codes=["401", "403", "404", "4XX", "500", "5XX"],
+            error_status_codes=["400", "401", "403", "404", "4XX", "500", "5XX"],
             retry_config=retry_config,
         )
 
@@ -1716,7 +1716,7 @@ class Images(BaseSDK):
                 ),
                 http_meta=models.HTTPMetadata(request=req, response=http_res),
             )
-        if utils.match_response(http_res, ["401", "403", "404"], "application/json"):
+        if utils.match_response(http_res, ["400", "401", "403", "404"], "application/json"):
             response_data = unmarshal_json_response(errors.ErrorResponseData, http_res)
             raise errors.ErrorResponse(response_data, http_res)
         if utils.match_response(http_res, "500", "application/json"):
