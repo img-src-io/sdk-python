@@ -12,6 +12,10 @@ class AvailableFormatsTypedDict(TypedDict):
     r"""AVIF format URL"""
     jpeg: str
     r"""JPEG format URL"""
+    png: str
+    r"""PNG format URL"""
+    jxl: str
+    r"""JPEG XL format URL"""
 
 
 class AvailableFormats(BaseModel):
@@ -23,3 +27,9 @@ class AvailableFormats(BaseModel):
 
     jpeg: str
     r"""JPEG format URL"""
+
+    png: str
+    r"""PNG format URL"""
+
+    jxl: str
+    r"""JPEG XL format URL"""

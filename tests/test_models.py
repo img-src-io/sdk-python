@@ -5,8 +5,11 @@ from datetime import datetime, timezone
 import img_src.models as models
 from img_src.models import (
     ActiveSignedUrl,
+    AvailableFormats,
+    CdnUrls,
     Credits,
     DeletePresetRequest,
+    Format,
     ImageListItem,
     MetadataResponse,
     SearchResult,
@@ -293,3 +296,50 @@ class TestSerialization:
         body = UploadImageRequestBody()
         data = body.model_dump()
         assert "visibility" not in data
+
+
+# ---------------------------------------------------------------------------
+# 7. JXL format support
+# ---------------------------------------------------------------------------
+
+
+class TestFormatEnum:
+    def test_includes_jxl(self):
+        assert "jxl" in Format.__args__
+
+    def test_all_formats(self):
+        expected = {"webp", "avif", "jpeg", "png", "jxl"}
+        assert set(Format.__args__) == expected
+
+
+class TestAvailableFormatsJxl:
+    def test_has_png_and_jxl_fields(self):
+        assert "png" in AvailableFormats.model_fields
+        assert "jxl" in AvailableFormats.model_fields
+
+    def test_creation_with_all_fields(self):
+        af = AvailableFormats(
+            webp="https://cdn.example.com/img.webp",
+            avif="https://cdn.example.com/img.avif",
+            jpeg="https://cdn.example.com/img.jpeg",
+            png="https://cdn.example.com/img.png",
+            jxl="https://cdn.example.com/img.jxl",
+        )
+        assert af.png == "https://cdn.example.com/img.png"
+        assert af.jxl == "https://cdn.example.com/img.jxl"
+
+
+class TestCdnUrlsJxl:
+    def test_has_jxl_field(self):
+        assert "jxl" in CdnUrls.model_fields
+
+    def test_creation_with_jxl(self):
+        urls = CdnUrls(
+            original="https://cdn.example.com/img.png",
+            webp="https://cdn.example.com/img.webp",
+            avif="https://cdn.example.com/img.avif",
+            jpeg="https://cdn.example.com/img.jpeg",
+            png="https://cdn.example.com/img.png",
+            jxl="https://cdn.example.com/img.jxl",
+        )
+        assert urls.jxl == "https://cdn.example.com/img.jxl"

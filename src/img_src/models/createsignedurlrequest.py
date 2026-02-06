@@ -21,6 +21,7 @@ Format = Literal[
     "avif",
     "jpeg",
     "png",
+    "jxl",
 ]
 
 

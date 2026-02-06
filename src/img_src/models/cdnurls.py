@@ -16,6 +16,8 @@ class CdnUrlsTypedDict(TypedDict):
     r"""JPEG format URL"""
     png: str
     r"""PNG format URL"""
+    jxl: str
+    r"""JPEG XL format URL"""
 
 
 class CdnUrls(BaseModel):
@@ -33,3 +35,6 @@ class CdnUrls(BaseModel):
 
     png: str
     r"""PNG format URL"""
+
+    jxl: str
+    r"""JPEG XL format URL"""
