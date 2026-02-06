@@ -3,10 +3,10 @@
 import importlib.metadata
 
 __title__: str = "img-src"
-__version__: str = "0.1.1"
+__version__: str = "0.3.0"
 __openapi_doc_version__: str = "1.0.0"
 __gen_version__: str = "2.795.8"
-__user_agent__: str = "speakeasy-sdk/python 0.1.1 2.795.8 1.0.0 img-src"
+__user_agent__: str = "speakeasy-sdk/python 0.3.0 2.795.8 1.0.0 img-src"
 
 try:
     if __package__ is not None:
